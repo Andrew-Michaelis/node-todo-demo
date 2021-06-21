@@ -46,13 +46,10 @@
   </div>
 </body>
 <script>
-  let back;
-  let text;
+  let back = "<%=back%>";
+  let text = "<%=text%>";
   let bgColor = back || "#bada55";
   let textColor = text || "black";
   document.getElementById("body").style.backgroundColor = bgColor;
   document.getElementById("body").style.color = textColor;
-  async function change(){
-    console.log("changing");
-  }
 </script>

@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const TodoTask = require("./models/TodoTasks");
 require("dotenv").config({path: ".env" });
-var back = "#ffffff";
+var back = "#bada55";
 var text = "#000000";
 
 //hide DB connection
@@ -24,7 +24,7 @@ app.use(express.urlencoded({extended: true }));
 //Get method
 app.get("/", (req, res) => {
     TodoTask.find({}, (err, tasks) => {
-        res.render("todo.ejs", {todoTasks: tasks});
+        res.render("todo.ejs", {todoTasks: tasks, back:back, text:text});
     });
 });
 //POST method
@@ -79,7 +79,8 @@ app
                 back = docs.bgColor;
                 text = docs.textColor;
                 console.log("bg: "+back+" text: "+text);
-                return {back, text}
+                res.redirect("/");
+                // return {back, text}
             }
         });
     })
