@@ -6,8 +6,7 @@
 body {
   background: #bada55;
 }
-.todo-container {
-  color: white;
+.formBox {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -32,14 +31,16 @@ body {
   width: 92%;
   border: none;
   border-radius: 5px;
+  margin: 4px 0;
+  padding: 2px;
   height: 20px;
   font-family: "Candal", sans-serif;
 }
 .todo-header button {
-  color: white;
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  margin: 2px;
   padding: 5px;
   font-family: "Candal", sans-serif;
   background-color: rgb(51, 212, 100);
@@ -69,7 +70,6 @@ body {
   font-family: "Candal", sans-serif;
 }
 .todo-list-item button {
-  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -78,7 +78,6 @@ body {
   background-color: rgb(51, 212, 100);
 }
 .todo-list-item .cancel {
-  color: white;
   text-decoration: none;
   border: none;
   border-radius: 5px;
@@ -91,7 +90,7 @@ body {
 .todo-list-item div {
   flex-grow: 2;
 }
-.todo-list-item .edit {
+.todo-list-item .select {
   color: rgb(143, 233, 58);
   margin-right: 10px;
   cursor: pointer;

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <title>Todo App</title>
+  <title>Page Edit</title>
   <link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css" />
   <link
     href="https://fonts.googleapis.com/css?family=Baloo+Bhai%7CCandal%7CChewy&display=swap"
@@ -14,20 +14,27 @@
   />
   <!-- <link rel="stylesheet" href="../public/stylesheets/style.css" /> -->
 </head>
-<body>
-  <div class="todo-container">
-    <h2>To-Do List</h2>
+<body id="body">
+  <div class="formBox">
+    <h2>Create Format Rules</h2>
     <div class="todo">
       <form action="/" method="POST" class="todo-header">
-        <input type="text" name="content" />
-        <button type="submit"><span class="fas fa-plus"></span></button>
+        <label>Name:</label>
+        <input type="text" name="name" /><br>
+        <label>Background Color</label>
+        <input type="color" name="bgColor" /><br>
+        <label>Text Color</label>
+        <input type="color" name="textColor" /><br>
+        <button type="submit" class="submit"><span class="fas fa-plus"></span></button>
+        <button class="clear"><span class="fas fa-eraser"></span></button>
       </form>
+      <h2>Select Format</h2>
       <ul class="todo-list">
         <% todoTasks.forEach(details => { %>
         <li class="todo-list-item">
-          <div class="todo-list-item-name"><%= details.content %></div>
-          <a href="/edit/<%= details._id %>" class="edit">
-            <span class="fas fa-edit"></span>
+          <div class="todo-list-item-name"><%= details.name %></div>
+          <a href="/select/<%= details._id %>" class="select">
+            <span class="fas fa-spinner" onclick="change()"></span>
           </a>
           <a href="/remove/<%= details._id %>" class="remove">
             <span class="fas fa-times"></span>
@@ -38,3 +45,14 @@
     </div>
   </div>
 </body>
+<script>
+  let back;
+  let text;
+  let bgColor = back || "#bada55";
+  let textColor = text || "black";
+  document.getElementById("body").style.backgroundColor = bgColor;
+  document.getElementById("body").style.color = textColor;
+  async function change(){
+    console.log("changing");
+  }
+</script>

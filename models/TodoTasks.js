@@ -1,8 +1,14 @@
 const mongoose = require("mongoose");
 const todoTaskSchema = new mongoose.Schema({
-    content: {
+    name: {
         type: String,
         required: true,
+    },
+    bgColor: {
+        type: String,
+    },
+    textColor: {
+        type: String,
     },
     date: {
         type: Date,
