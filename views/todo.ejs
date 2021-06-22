@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <head>
-  <title>Page Edit</title>
-  <link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css" />
+  <title>Color Formatter</title>
+  <link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css" /> <!--I'm using my CSS stylesheet-->
   <link
     href="https://fonts.googleapis.com/css?family=Baloo+Bhai%7CCandal%7CChewy&display=swap"
     rel="stylesheet"
-  />
+  /> <!--I'm using a googleapi font-->
   <link
     rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
     crossorigin="anonymous"
-  />
+  /> <!--I'm using some FontAwesome special icons-->
   <!-- <link rel="stylesheet" href="../public/stylesheets/style.css" /> -->
 </head>
 <body id="body">
@@ -26,30 +26,26 @@
         <label>Text Color</label>
         <input type="color" name="textColor" /><br>
         <button type="submit" class="submit"><span class="fas fa-plus"></span></button>
-        <button class="clear"><span class="fas fa-eraser"></span></button>
+        <!-- <button class="clear"><span class="fas fa-eraser"></span></button> --><!--Intended use of this button is to erase all entries in the database. Not implemented-->
       </form>
       <h2>Select Format</h2>
       <ul class="todo-list">
-        <% todoTasks.forEach(details => { %>
-        <li class="todo-list-item">
-          <div class="todo-list-item-name"><%= details.name %></div>
-          <a href="/select/<%= details._id %>" class="select">
-            <span class="fas fa-spinner" onclick="change()"></span>
+        <% todoTasks.forEach(details => { %> <!--populate the list with my database information-->
+        <li class="todo-list-item"> <!--list item holds all the data on a single item-->
+          <div class="todo-list-item-name"><%= details.name %></div> <!--what's it called?-->
+          <a href="/select/<%= details._id %>" class="select"> <!--button to select with ID-->
+            <span class="fas fa-spinner"></span> <!--pretty spinner icon thing-->
           </a>
-          <a href="/remove/<%= details._id %>" class="remove">
-            <span class="fas fa-times"></span>
+          <a href="/remove/<%= details._id %>" class="remove"> <!--button to remove with ID-->
+            <span class="fas fa-times"></span> <!--pretty X icon thing-->
           </a>
         </li>
         <% }) %>
-      </ul>
+      </ul> <!--we have everything in there, time to start closing up-->
     </div>
   </div>
 </body>
 <script>
-  let back = "<%=back%>";
-  let text = "<%=text%>";
-  let bgColor = back || "#bada55";
-  let textColor = text || "black";
-  document.getElementById("body").style.backgroundColor = bgColor;
-  document.getElementById("body").style.color = textColor;
+  document.getElementById("body").style.backgroundColor = "<%=back%>"; //special rules that set background color
+  document.getElementById("body").style.color = "<%=text%>"; //special rules that set text color
 </script>
