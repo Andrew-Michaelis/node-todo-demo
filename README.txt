@@ -12,9 +12,9 @@ alter the webpage to fit into the criteria listed within.
 ✔Get the form submitting to database
 -Get the form to check formatting before submitting (unneeded if I limit available inputs)
 ✔Create a delete option to clean up the database and remove entries (already there, actually.)
--Create a delete all option to remove all things listed
--Reformat the webpage to allow variables that denote aspects (such as color)
--Make certain the webpage can change it's appearance (I expect this will be annoying)
+xCreate a delete all option to remove all things listed
+✔Reformat the webpage to allow variables that denote aspects (such as color)
+✔Make certain the webpage can change it's appearance (I expect this will be annoying)
 ✔Pull data from the database and set it to the variables denoting appearance (selector)
--Make everything work (Minimum Viable Product)
--Add fun features (random creation and/or selction of database entries)
+✔Make everything work (Minimum Viable Product)
+xAdd fun features (random creation and/or selction of database entries)
